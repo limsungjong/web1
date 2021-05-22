@@ -209,11 +209,11 @@ header .rightbox input {
   border: 1px solid var(--gray-naver-color);
   border-radius: 10px;
 }
-.container .right__sidebar .propile .img img {
+.container .right__sidebar .profile .img img {
   height: 100%;
   width: 100%;
 }
-.container .right__sidebar .propile .intro {
+.container .right__sidebar .profile .intro {
   border: 1px solid var(--gray-naver-color);
   padding: var(--padding);
   margin: var(--padding) 0;
@@ -248,21 +248,21 @@ header .rightbox input {
   .container .right__sidebar {
     padding: var(--padding) 0;
   }
-  .container .right__sidebar .propile {
+  .container .right__sidebar .profile {
     display: flex;
     flex-direction: row;
     align-content: flex-start;
     justify-content: space-around;
   }
-  .container .right__sidebar .propile .img {
+  .container .right__sidebar .profile .img {
     max-height: 168px;
     max-width: 300px;
     padding: 0 var(--padding);
   }
-  .container .right__sidebar .propile .intro {
+  .container .right__sidebar .profile .intro {
     margin: 0;
   }
-  .container .right__sidebar .propile .musicbox {
+  .container .right__sidebar .profile .musicbox {
     padding: 0 var(--padding);
   }
 }
