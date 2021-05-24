@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="blog.css">
     <script src="https://kit.fontawesome.com/8e31ecfd50.js" crossorigin="anonymous">
     </script>
-    <script src="blog.js" defar></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script async src="blog.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600;700&display=swap" rel="stylesheet">
     <title>Blog__skel</title>
@@ -20,12 +21,19 @@
             Good! Luck!
             <span class="blind">로고</span>
         </div>
-        <div class="searchbox">
-            <input type="text" placeholder="search..">
-            <button class="searchbotton">
+        <form class = 'Search'>
+        <div id="Searchbox">
+            <select class='SelectSearch' name='WhichSearch'>
+                <option id='google' value='google'>Google</option>
+                <option id='naver' value='naver'>Naver</option>
+            </select>
+            <input class= 'keyword' type='text' name= 'search' maxlength=255 value = "" autocomplete="off">
+            <button class="SearchBotton" type="submit" name="click" value="">
+                <span class="blind">검색</span>
                 <i class="fas fa-search"></i>
             </button>
         </div>
+    </form>
         <div class="rightbox">
             <div class="Mode">
                 <input id="Mode" type="button" value="Night" onclick="
@@ -33,7 +41,8 @@
                 ">
             </div>
             <div class="loginbox">
-                loginbox
+                <i class="fas fa-user"></i>
+                <span class="blind">loginbox</span>
             </div>
         </div>
     </header>

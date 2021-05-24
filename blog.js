@@ -1,10 +1,14 @@
+'use strict';
+
 let Body = {
     // Body라는 변수명을 만들면서 setColor 함수와 setColorBakcground 함수를 각각 생성
     setColor : function (color) {
-        document.querySelector('body').style.color = color; // 'body'의 색의 color을 매개인자로 받은 color의 색상으로 변경
+        // document.querySelector('body').style.color = color; // 'body'의 색의 color을 매개인자로 받은 color의 색상으로 변경
+        $('body').css("color", color); // jqurey
     },
     setColorBakcground : function (color) {
-        document.querySelector('body').style.backgroundColor = color; // 'body'의 색의 backgroundColor을 매개인자로 받은 color의 색상으로 변경
+        // document.querySelector('body').style.backgroundColor = color; // 'body'의 색의 backgroundColor을 매개인자로 받은 color의 색상으로 변경
+        $('body').css("backgroundColor", color); // jqurey
     }
 }
 let Links = { 
@@ -33,3 +37,30 @@ function ModeChange (self){
             self.value = 'Night'; // 매개변수 self의 value 값을 Night로 변경
         }
     }
+
+const Searching = Search.prototype;
+
+function Search() {
+    this.keyword = document.querySelector('input[name = "search"]');
+    this.engine = document.querySelector('.SelectSearch');
+    this.button = document.querySelector('.SearchBotton');
+    this.form = document.querySelector('.Search');
+
+    this.Engeine();
+}
+Searching.Engeine = function() {
+    this.form.addEventListener ('submit', e => {
+
+        e.preventDefault();
+
+        let engine = this.engine.value;
+        let keyword = this.keyword.value;
+
+        if(engine === 'google') {
+            location.href = 'http://www.google.co.kr/search?q=' + keyword;
+        } else if (engine === 'naver') {
+            location.href = 'https://search.naver.com/search.naver?query=' + keyword;
+        }
+    });
+}
+new Search();
