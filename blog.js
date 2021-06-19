@@ -18,7 +18,7 @@ let Links = {
     let i = 0;
         while(i < hrefcolor.length) { // 위에서 만든 hrefcolor의 배열의 길이만큼 반복
             hrefcolor[i].style.color = color; // hrefcolor의 배열을 i 번 돌면서 Linksetcolor의 매개 color의 색으로 변경
-            i = i+1; // i의 값 카운트
+            i++; // i의 값 카운트
         }
     }
 }
@@ -38,19 +38,27 @@ function ModeChange (self){
         }
     }
 
+// source code : https://showyourself.tistory.com/3
+// Searching 변수에 Search.prototype으로 만들고
 const Searching = Search.prototype;
 
+// 각각 keyword에는 input태그의 text를 받기 위해 name인 search를 불러와서 할당
+// engine에는 select에서 각각 google 와 naver 선택을 받아와서 할당
+// button은 검색 버튼이 눌렸을 때도 반응하기 위해 만듬
+// form에는 Searcg 폼 태그 자체를 할당
+// 각각 this를 통해 함수가 만들어진 곳의 객체를 가리킴
 function Search() {
     this.keyword = document.querySelector('input[name = "search"]');
     this.engine = document.querySelector('.SelectSearch');
     this.button = document.querySelector('.SearchBotton');
     this.form = document.querySelector('.Search');
-
+// Engine 함수 실행
     this.Engeine();
 }
-Searching.Engeine = function() {
+// Searching에서 Engeine 함수를 선언
+Search.prototype.Engeine = function() {
     this.form.addEventListener ('submit', e => {
-
+// Search 함수의 form과 addEventListener함수를 이용하여 form태그의 제출 이벤트 추가
         e.preventDefault();
 
         let engine = this.engine.value;
@@ -64,3 +72,6 @@ Searching.Engeine = function() {
     });
 }
 new Search();
+
+var audio = document.getElementById("myaudio");
+  audio.volume = 0.1;
